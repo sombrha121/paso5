@@ -1,0 +1,21 @@
+<div *ngIf="hero"><!-- Este bloque de código se muestra si la variable hero no es nula Controla la visibilidad de los detalles del héroe.-->
+    <h2>{{hero.name | uppercase}} Detalles</h2>  
+    <div><span>id: </span>{{hero.id}}</div> <!--Muestra el ID del héroe.-->
+    <div> <!--Proporciona un formulario para editar el nombre del héroe.-->
+      <label for="hero-name">Nombre del Heroe: </label> 
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+    </div>
+    <button type="button" (click)="goBack()">Volver/Atras</button><!--Este botón permite al usuario volver atrás en la navegación-->
+  </div> 
+    
+    
+    
+    <!-- se copia el codigo o plantilla paso 3 parte-->
+<!-- podemos esconder este codigo para que no salga mas el problema del repetido del nombre para los personaje-->
+<!--  <h2>{{hero.name | uppercase}} Details</h2>-->
+    <!--<div><span>id: </span>{{hero.id}}</div>-->
+    <!--<div>-->
+    <!--<label for="hero-name">Hero name: </label>-->
+      <!--<input id="hero-name" [(ngModel)]="hero.name" placeholder="name">-->
+    <!--</div>-->
+  <!--</div>-->

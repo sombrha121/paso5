@@ -1,0 +1,51 @@
+<div class="heroes">
+  <h2>Mis Héroes</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+      <button [class.selected]="hero === selectedHero" type="button" [title]="hero.poder"> <!-- muestra un desplegable del poder del heroe -->
+        <!-- Muestra el número de héroe -->
+        <span class="badge">{{ hero.id }}</span>
+        <!-- Muestra el nombre del héroe -->
+        <span class="name">{{ hero.name }}</span>
+      </button>
+      <!-- Muestra los detalles del héroe al hacer clic -->
+      <div *ngIf="hero.showDetails" class="details">  <!-- esto es paso 3  -->
+        <p><strong>Poder:</strong> {{ hero.poder }}</p>
+        <p><strong>Película:</strong> {{ hero.pelicula }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedHero">
+  <!-- Muestra los detalles del héroe seleccionado -->
+  <h2>{{ selectedHero.name | uppercase }} Detalles</h2>
+  <!-- Muestra el ID del héroe -->
+  <div><strong>ID:</strong> {{ selectedHero.id }}</div>
+  <div>
+    <label for="hero-name">Nombre del Héroe: </label> <!-- muestra el nombre del hereo-->
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  </div>
+  <!-- Muestra el poder del héroe -->
+  <div><strong>Poder:</strong> {{ selectedHero.poder }}</div>
+  <!-- Muestra la película del héroe -->
+  <div><strong>Película:</strong> {{ selectedHero.pelicula }}</div>
+</div>
+
+
+
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail> --><!-- paso 3 actualizar los heroes-->
+<!-- paso 5 p4 eliminamos app-hero-detail este codigo ya no sirve-->
+
+
+<!-- paso 5 parte 9 se elimina el <li-->
+<!--<ul class="heroes">-->
+ <!-- <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> -->
+    <!-- estilo al heroe selecion paso 2  se modifico el antiguo codigo de arriba-->
+    <!-- <button type="button">-->
+     <!-- <span class="badge">{{hero.id}}</span>-->
+     <!-- <span class="name">{{hero.name}}</span>-->
+    <!--</button>-->
+ <!-- </li>-->
+<!--</ul>-->
+

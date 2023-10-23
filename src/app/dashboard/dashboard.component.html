@@ -1,0 +1,6 @@
+<h2>Top Heroes</h2>
+<div class="heroes-menu"> <!-- añadimos un class-->
+    <a *ngFor="let hero of heroes"
+    routerLink="/detail/{{hero.id}}"> <!-- paso 5 parte 8 componente de enlaces se añadio /details ahora cuando hagamos clic a un nombre no rediccionara -->
+    {{hero.name}}
+  </a>

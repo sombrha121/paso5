@@ -1,0 +1,18 @@
+<div *ngIf="messageService.messages.length"> <!-- paso 4 vinculamos el boton y agregamos el clear para-->
+     
+    <div *ngIf="messageService.messages.length"> <!-- Si no hay mensajes, no se muestra ninguna sección de mensajes.-->
+
+        <h2>Mensajes</h2> <!-- esto sale abajo de nuestro boton para eliminar algo-->
+        <button type="button" class="clear"
+                (click)="messageService.clear()">Clear/eliminar mensaje</button> <!-- se modifico el clea y se añadio una class este es el paso 4 vincularse a la messageservice-->
+        <div *ngFor='let message of messageService.messages'> {{message}} </div> <!-- y mostrarlos en la vista.-->
+      
+      </div>
+
+      
+        
+        
+                 
+         
+      
+       
